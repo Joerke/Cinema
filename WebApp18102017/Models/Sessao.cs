@@ -7,25 +7,25 @@ using System.Web;
 
 namespace WebApp18102017.Models
 {
-    [Table("TbSessao")]
+    //[Table("TbSessao")]
     public class Sessao
     {
-        [Key]
+        //[Key]
         public int Codigo{ get; set; }
 
-        [Required]
+        //[Required]
         public int DataHoraInicio { get; set; }
 
-        [Required]
+        //[Required]
         public int DataHotaFim { get; set; }
 
-        [Required]
+        //[Required]
         public int ValorInteira { get; set; }
 
-        [Required]
+        //[Required]
         public int ValorMeia { get; set; }
 
-        [Required]
+        //[Required]
         public bool Encerrada { get; set; }
 
 

@@ -8,17 +8,19 @@ namespace WebApp18102017.Models
 {
     public class Sala
     {
-        [Required]
+        // [Required]
         public int SalaId { get; set; }
-        [Required]
+        //  [Required]
         public int Numero { get; set; }
 
-        [Required]
+        //[Required]
         public int Capacidade { get; set; }
 
-        [Required]
+        // [Required]
         public string Descricao { get; set; }
 
         public List<Sessao> Sessoes { get; set; }
+
+        public string  ChaveAcesso { get; set; }
     }
 }

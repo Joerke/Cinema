@@ -21,5 +21,24 @@ namespace WebApp18102017.Context
         public DbSet<Sessao> Sessoes  { get; set; }
         public DbSet<Sala> Salas { get; set; }
 
+
+
+        // override = sobre escrita da tabela base
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            // aki esta colocando a Coluna CODIGO como chave primaria
+            modelBuilder.Entity<Sessao>().HasKey(x => x.Codigo);
+
+            // aki esta mudando o nome da classe 
+            modelBuilder.Entity<Sessao>().ToTable("TbSesao");
+            modelBuilder.Entity<Sala>().ToTable("TbSala");
+
+            //aki esta colocando essas propriedades estao colocando como NOT NULL (Obrigatorio)
+            modelBuilder.Entity<Sala>().Property(x => x.Numero).IsRequired();
+            modelBuilder.Entity<Sala>().Property(x => x.Descricao).IsRequired();
+            modelBuilder.Entity<Sala>().Property(x => x.Capacidade).IsRequired();
+
+
+        }
     }
 }
